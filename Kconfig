@@ -1,0 +1,2 @@
+source "bh1750/Kconfig"
+source "rc522/Kconfig"

@@ -1,0 +1,15 @@
+#Create some new option in menuconfig
+config CUSTOM_BH1750
+    bool "Custom I2C light sensor BH1750"
+    default n           # Set the driver to disabled at default
+    depends on I2C      # BH1750 driver depend on I2C module
+    depends on LOG      # BH1750 driver depend on Logging module
+    help
+        Enable the Custom I2C Light Sensor BH1750 driver.
+
+config BH1750_CONTINUOUS_MODE
+    bool "Continuous mode"
+    default y                   # Set the BH1750 operate in continuous measurement mode at default
+    depends on CUSTOM_BH1750    # This option is depend on Custom BH1750 module is enable
+    help
+        Enable continuous measurement operate mode for Custom BH1750 when make measurement.

@@ -1,0 +1,8 @@
+config CUSTOM_RC522
+    bool "Custom device driver for MFRC522 device"
+    default n           # Set the driver to disabled at default
+    depends on SPI      # RC522 driver depend on I2C module
+    depends on LOG      # RC522 driver depend on Logging module
+    depends on MULTITHREADING   # RC522 driver depend on multithreading module as implemented in real-time thread
+    help
+        Enable the Custom MFRC522 driver.

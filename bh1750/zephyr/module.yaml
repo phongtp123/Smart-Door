@@ -1,0 +1,6 @@
+name: bh1750
+build:
+  cmake: .
+  kconfig: Kconfig
+  settings:
+    dts_root: .

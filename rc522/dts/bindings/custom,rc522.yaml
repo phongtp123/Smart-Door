@@ -1,0 +1,12 @@
+description: My custom MFRC522
+
+compatible: "custom,rc522"
+
+include: [spi-device.yaml]
+
+properties:
+  irq-gpios:
+    type: phandle-array
+    required: true
+    description: |
+      Define pin that connect to IRQ pin on MFRC522 to receive IRQ signal.
