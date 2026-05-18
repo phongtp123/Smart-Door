@@ -1,0 +1,26 @@
+/ {
+    aliases {
+        // my-bh1750 = &bh1750;
+        my-rc522 = &rc522;
+    };
+
+};
+
+// &i2c0 {
+//     status = "okay";
+
+//     bh1750: bh1750@23 {
+//         compatible = "custom,bh1750";
+//         reg = <0x23>;
+//         mode = <0>;
+//     };
+// };
+
+&spi2 {
+    rc522: rc522@0 {
+        compatible = "custom,rc522";
+        reg = <0>;
+        spi-max-frequency = <10000000>;
+        irq-gpios=<&gpio0 9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+    };
+};
